@@ -1,0 +1,135 @@
+=====================================================================
+   Career Compass - HOW TO RUN INSTRUCTIONS
+=====================================================================
+
+STEP 1: IMPORT DATABASE
+------------------------
+Open Command Prompt or PowerShell and run:
+
+mysql -u root -p -e "CREATE DATABASE career_compass"
+
+Then run:
+mysql -u root -p < "D:\Career Compass Cursor\database\schema.sql"
+
+Then run:
+mysql -u root -p career_compass < "D:\Career Compass Cursor\database\sample_data.sql"
+
+(Enter your MySQL password when prompted)
+
+
+STEP 2: UPDATE MYSQL PASSWORD (IF NEEDED)
+------------------------------------------
+If your MySQL has a password:
+
+1. Go to: D:\Career Compass Cursor\backend
+2. Open .env file
+3. Change: DB_PASSWORD=your_password_here
+4. Save the file
+
+
+STEP 3: START BACKEND SERVER
+-----------------------------
+Open Terminal/Command Prompt 1:
+
+cd "D:\Career Compass Cursor\backend"
+npm run dev
+
+Wait until you see: "Server is running on port 5000"
+
+
+STEP 4: START FRONTEND SERVER
+------------------------------
+Open Terminal/Command Prompt 2 (NEW WINDOW):
+
+cd "D:\Career Compass Cursor\frontend"
+npm run dev
+
+Wait until you see: "Ready on http://localhost:3000"
+
+
+STEP 5: OPEN BROWSER
+--------------------
+Go to: http://localhost:3000
+
+
+STEP 6: LOGIN
+-------------
+Username: student1
+Password: password123
+
+OR register a new account!
+
+
+=====================================================================
+   QUICK ALTERNATIVE: USE BATCH FILES
+=====================================================================
+
+Instead of manual setup, you can use:
+
+1. setup.bat       - Sets up database
+2. START.bat       - Starts both servers
+
+(Just double-click them!)
+
+
+=====================================================================
+   TROUBLESHOOTING
+=====================================================================
+
+CAN'T CONNECT TO MYSQL?
+-----------------------
+- Make sure MySQL service is running
+- Test with: mysql -u root -p
+- Check your password is correct
+
+
+PORT ALREADY IN USE?
+--------------------
+- Close other apps using ports 3000/5000
+- Or change port in backend\.env
+
+
+DATABASE ERROR?
+---------------
+- Make sure schema.sql imported BEFORE sample_data.sql
+- Check MySQL is running
+- Verify .env file credentials
+
+
+MODULE NOT FOUND?
+-----------------
+cd backend
+rm -rf node_modules
+npm install
+
+cd ../frontend
+rm -rf node_modules
+npm install
+
+
+=====================================================================
+   WHAT'S READY TO USE
+=====================================================================
+
+✅ 12 Careers with details
+✅ 10 Course options
+✅ 10 Quiz questions
+✅ 7 Colleges/universities
+✅ 4 Career roadmaps
+✅ 8 Resources (articles/videos)
+✅ 3 Demo accounts (admin, 2 students)
+
+=====================================================================
+   NEED MORE HELP?
+=====================================================================
+
+Read these files:
+- START_HERE.md          (Quick start)
+- QUICK_START.md         (Detailed steps)
+- INSTRUCTIONS.md        (Troubleshooting)
+- README.md              (Full docs)
+
+=====================================================================
+   HAVE FUN! 🎉
+=====================================================================
+
